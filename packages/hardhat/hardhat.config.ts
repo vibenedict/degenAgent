@@ -14,12 +14,13 @@ const config: HardhatUserConfig = {
     celo: {
       accounts: [process.env.PRIVATE_KEY ?? '0x0'],
       url: 'https://forno.celo.org',
-    },
+    },// TODO: add all networks you are planning to deloy
   },
   etherscan: {
     apiKey: {
       alfajores: process.env.CELOSCAN_API_KEY ?? '',
       celo: process.env.CELOSCAN_API_KEY ?? '',
+      // TODO: add all networks you are planning to deloy
     },
     customChains: [
       {

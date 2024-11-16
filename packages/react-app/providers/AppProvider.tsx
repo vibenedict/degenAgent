@@ -28,7 +28,8 @@ const connectors = connectorsForWallets(
 
 const config = createConfig({
   connectors,
-  chains: [celo, celoAlfajores],
+  // Add all chains. Mantle, Zirctuit, Flow, Bitkub
+  chains: [celo, celoAlfajores, scrollSepolia, baseSepolia, zircuitSepolia],
   transports: {
     [celo.id]: http(),
     [celoAlfajores.id]: http(),
