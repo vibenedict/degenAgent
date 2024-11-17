@@ -1,4 +1,4 @@
-# Siciv Luda
+# DegenAgent
 
 project Description
 
