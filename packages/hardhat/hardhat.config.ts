@@ -35,6 +35,12 @@ const config: HardhatUserConfig = {
       accounts: [process.env.PRIVATE_KEY ?? "0x0"],
       url: "https://rpc-testnet.bitkubchain.io",
     },
+    // Mantle Testnet
+    mantleTestnet: {
+      url: "https://rpc.testnet.mantle.xyz",
+      chainId: 5001,
+      accounts: [process.env.PRIVATE_KEY || ""],
+    },
   },
   etherscan: {
     apiKey: {
@@ -101,6 +107,14 @@ const config: HardhatUserConfig = {
         urls: {
           apiURL: "https://api-testnet.bkcscan.com/api",
           browserURL: "https://testnet.bkcscan.com",
+        },
+      },
+      {
+        network: "mantleTestnet",
+        chainId: 5001,
+        urls: {
+          apiURL: "https://explorer.testnet.mantle.xyz/api",
+          browserURL: "https://explorer.testnet.mantle.xyz",
         },
       },
     ],

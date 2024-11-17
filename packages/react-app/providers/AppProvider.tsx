@@ -12,10 +12,11 @@ import {
   celo,
   celoAlfajores,
   baseSepolia,
-  zircuitSepolia,
+  zircuitTestnet,
   scrollSepolia,
   bitkubTestnet,
   flowTestnet,
+  mantleSepoliaTestnet,
 } from "wagmi/chains";
 import Layout from "../components/Layout";
 import { injectedWallet } from "@rainbow-me/rainbowkit/wallets";
@@ -41,13 +42,20 @@ const config = createConfig({
     celoAlfajores,
     scrollSepolia,
     baseSepolia,
-    zircuitSepolia,
+    zircuitTestnet,
     flowTestnet,
     bitkubTestnet,
+    mantleSepoliaTestnet,
   ],
   transports: {
     [celo.id]: http(),
     [celoAlfajores.id]: http(),
+    [scrollSepolia.id]: http(),
+    [baseSepolia.id]: http(),
+    [zircuitTestnet.id]: http(),
+    [flowTestnet.id]: http(),
+    [bitkubTestnet.id]: http(),
+    [mantleSepoliaTestnet.id]: http(),
   },
 });
 
