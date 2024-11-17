@@ -1,35 +1,50 @@
-'use client';
+"use client";
 
-import '@rainbow-me/rainbowkit/styles.css';
+import "@rainbow-me/rainbowkit/styles.css";
 
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   RainbowKitProvider,
   connectorsForWallets,
-} from '@rainbow-me/rainbowkit';
-import { WagmiProvider, createConfig, http } from 'wagmi';
-import { celo, celoAlfajores } from 'wagmi/chains';
-
-import Layout from '../components/Layout';
-import { injectedWallet } from '@rainbow-me/rainbowkit/wallets';
+} from "@rainbow-me/rainbowkit";
+import { WagmiProvider, createConfig, http } from "wagmi";
+import {
+  celo,
+  celoAlfajores,
+  baseSepolia,
+  zircuitSepolia,
+  scrollSepolia,
+  bitkubTestnet,
+  flowTestnet,
+} from "wagmi/chains";
+import Layout from "../components/Layout";
+import { injectedWallet } from "@rainbow-me/rainbowkit/wallets";
 
 const connectors = connectorsForWallets(
   [
     {
-      groupName: 'Recommended',
+      groupName: "Recommended",
       wallets: [injectedWallet],
     },
   ],
   {
-    appName: 'Celo Composer',
-    projectId: process.env.WC_PROJECT_ID ?? '044601f65212332475a09bc14ceb3c34',
+    appName: "Celo Composer",
+    projectId: process.env.WC_PROJECT_ID ?? "044601f65212332475a09bc14ceb3c34",
   }
 );
 
 const config = createConfig({
   connectors,
   // Add all chains. Mantle, Zirctuit, Flow, Bitkub
-  chains: [celo, celoAlfajores, scrollSepolia, baseSepolia, zircuitSepolia],
+  chains: [
+    celo,
+    celoAlfajores,
+    scrollSepolia,
+    baseSepolia,
+    zircuitSepolia,
+    flowTestnet,
+    bitkubTestnet,
+  ],
   transports: {
     [celo.id]: http(),
     [celoAlfajores.id]: http(),
